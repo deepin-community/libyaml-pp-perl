@@ -1,0 +1,46 @@
+Source: libyaml-pp-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libencode-perl <!nocheck>,
+                     libscalar-list-utils-perl <!nocheck>,
+                     libtest-deep-perl <!nocheck>,
+                     libtest-simple-perl <!nocheck>,
+                     libtest-warn-perl <!nocheck>,
+                     libtie-ixhash-perl <!nocheck>,
+                     perl
+Standards-Version: 4.6.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libyaml-pp-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libyaml-pp-perl.git
+Homepage: https://metacpan.org/release/YAML-PP
+Rules-Requires-Root: no
+
+Package: libyaml-pp-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libencode-perl,
+         libscalar-list-utils-perl
+Recommends: libtie-ixhash-perl
+Description: pure-perl YAML framework
+ YAML::PP is a modern, modular YAML processor.
+ .
+ It aims to support YAML 1.2 and YAML 1.1.
+ .
+ YAML is a serialization language. The YAML input is called "YAML Stream". A
+ stream consists of one or more "Documents", separated by a line with a
+ document start marker '---'. A document optionally ends with the document end
+ marker '...'.
+ .
+ This allows one to process of continuous streams additionally to a fixed
+ input file or string.
+ .
+ The YAML::PP frontend will currently load all documents, and return only the
+ last if called with scalar context.
+ .
+ The YAML backend is implemented in a modular way that allows one to add
+ custom handling of YAML tags, perl objects and data types. The inner API is
+ not yet stable.

@@ -1,0 +1,27 @@
+libyaml-pp-perl (0.027-1) unstable; urgency=medium
+
+  From upstream Changes for 0.027:
+
+  - Forbid duplicate keys by default like announced in 0.026
+
+ -- gregor herrmann <gregoa@debian.org>  Sun, 12 Sep 2021 19:22:09 +0200
+
+libyaml-pp-perl (0.019-1) unstable; urgency=medium
+
+  From upstream Changes for 0.019:
+
+  - Important (and possibly breaking) changes:
+    - Change default schema from JSON to Core.
+      Reason: This is the recommended Schema for YAML 1.2, and what people
+      would expect to be the default.
+    - load* in scalar context returns first document.
+      Reason: I think this is the most reasonable behaviour, and it
+      will continue to work the same if you later add documents to a file.
+    - Empty nodes in YAML 1.2 JSON Schema resolve to '' by default like
+      before, but now it can be configured
+    - Fix some control character escaping and encoding issues (issue#16, issue#17)
+      YAML::PP will now just assume all input data are unicode characters
+      and won't do an explicit utf8::upgrade
+    - Fix Core schema resolver for inf: add +.inf, +.Inf, +.INF
+
+ -- gregor herrmann <gregoa@debian.org>  Thu, 13 Feb 2020 16:46:17 +0100
